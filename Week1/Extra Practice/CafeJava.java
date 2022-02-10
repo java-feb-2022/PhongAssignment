@@ -23,9 +23,9 @@ public class CafeJava {
         // Order completions (add yours below)
         boolean isReadyOrder1 = false;
         boolean isReadyOrder2 = false;
-        boolean isReadyOrder3 = false;
+        // boolean isReadyOrder3 = false;
         boolean isReadyOrder4 = true;
-        boolean isReadyOrder5 = false;
+        // boolean isReadyOrder5 = false;
 
         // APP INTERACTION SIMULATION (Add your code for the challenges below)
         // Example:
