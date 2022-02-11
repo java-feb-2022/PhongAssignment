@@ -49,7 +49,7 @@ public class HelloJava {
 
     public static void oneTo255() {
         for (int i = 1; i < 7; i++) {
-
+            // System.out.println(x);
             System.out.println(evenOdd(i));
         }
 
