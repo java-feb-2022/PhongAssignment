@@ -10,7 +10,8 @@ public class BaristaTest {
         BaristaOrder order2 = new BaristaOrder("George");
         BaristaOrder order3 = new BaristaOrder("Don");
         BaristaOrder order4 = new BaristaOrder("Matt");
-        BaristaOrder order5 = new BaristaOrder("");
+        BaristaOrder order5 = new BaristaOrder();
+        BaristaOrder order6 = new BaristaOrder();
 
         order1.addItem(item2);
         order1.addItem(item1);
@@ -38,7 +39,26 @@ public class BaristaTest {
 
         System.out.println(order2.getStatusMessage());// ready
 
-        System.out.println("----------------");
+        System.out.println("------Guest Order----------");
+
+        order5.addItem(item2);
+        order5.addItem(item3);
+        order5.addItem(item2);
+        order5.addItem(item1);
+        order5.addItem(item5);
+        order5.displayOrder();
+        order5.setReady(true);
+        order5.getOrderTotal();
+
+        System.out.println(order5.getStatusMessage());// ready
+        order6.addItem(item2);
+        order6.addItem(item3);
+        order6.addItem(item2);
+        order6.displayOrder();
+        order6.setReady(false);
+        order6.getOrderTotal();
+
+        System.out.println(order6.getStatusMessage());// ready
 
     }
 
