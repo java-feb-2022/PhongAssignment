@@ -68,7 +68,8 @@ public class BankAccount {
             BankAccount.totalAmtAvail -= amount;
         } else {
             // add
-            System.err.printf("No enough Money in %s account :( ", this.accountType);
+            System.err.printf("Not enough money in %s account with Account# %s for withdraw :( ", this.accountType,
+                    this.accountNumber);
         }
     }
 

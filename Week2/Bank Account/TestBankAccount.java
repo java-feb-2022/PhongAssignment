@@ -3,8 +3,9 @@ public class TestBankAccount {
         BankAccount farmerBankaAccount = new BankAccount();
         farmerBankaAccount.setAccountType("Savings");
         farmerBankaAccount.setAccountNumber(123);
-        // System.out.println("New account No. -" + farmer getAccountNumber());
-        System.out.println("New account No. " + farmerBankaAccount.getAccountNumber());
+        // System.out.println("New account created. Account Number is: -" + farmer
+        // getAccountNumber());
+        System.out.println("New account created. Account Number is: " + farmerBankaAccount.getAccountNumber());
         farmerBankaAccount.depositMoney(25000.00, "checking");
         farmerBankaAccount.depositMoney(5000.00, "saving");
         farmerBankaAccount.moneyWithdraw(5000.00, "checking");
