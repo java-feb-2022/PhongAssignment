@@ -16,6 +16,27 @@ Object
     -Abstration
     -Polymorphism
     -Interitance - parent/child 
+--------------=================------------
+	--Interitance**
+	Employee class
+	-private email
+	-private pay
+
+
+	public {
+		//print emp detail 
+	}
+
+	Eng = project and skills
+	Sales Rep- targets 
+
+
+Abstraction 
+- filter out detial 
+abstract keyword
+Build on top of Abstracted layers
+
+Interface - pure abstract classes 
 
 
 
@@ -42,46 +63,115 @@ Object
 
 
 
+import java.util.Random;
+public class BankAccount {
+
+	// static things (belonging to the BankAccount class)
+	public static int numAccounts = 0;
+	public static double totalHoldings = 0;
+	
+    // Ninja Bonus (Solutions vary!)
+    private static int generateId() {
+		Random randGenerator = new Random();
+        int randomId = randGenerator.nextInt(1000000000) + 999999999;
+		return randomId;
+	}
+
+    // instance things (belonging to a particular bank account)
+	private int accountNumber; // Ninja Bonus (could also have been a string)
+
+	private double checkingBalance;
+	private double savingsBalance;
+
+	public BankAccount() {
+		BankAccount.numAccounts += 1;
+		this.checkingBalance = 0;
+		this.savingsBalance = 0;
+		this.accountNumber = BankAccount.generateId();
+	}
+	
+	public double getCheckingBalance() {
+		return this.checkingBalance;
+	}
+
+	public double getSavingsBalance() {
+		return this.savingsBalance;
+	}
+    public int getAccountNumber() {
+        return this.accountNumber;
+    }
+
+	public void depositMoney(double amount, String account) {
+		if(account.equals("savings"))
+			this.savingsBalance += amount;
+		else if(account.equals("checking"))
+			this.checkingBalance += amount;
+		BankAccount.totalHoldings += amount;
+	}
+
+	public void withdrawMoney(double amount, String account) {
+		boolean successful = false;
+		if(account.equals("savings")) {
+			// check if enough in account
+			if(this.savingsBalance - amount >= 0) {
+				successful = true;
+				this.savingsBalance -= amount;
+			}
+		}
+		else if(account.equals("checking")) {
+			// check if enough in account
+			if(this.checkingBalance - amount >= 0) {
+				successful = true;
+				this.checkingBalance -= amount;
+			}
+		}
+		if(successful) {
+			BankAccount.totalHoldings -= amount;
+		}
+        else {
+            System.out.println("Insufficient funds.");
+        }
+	}
+
+	public void displayAccountBalance() {
+		// %.2f formats decimal to the 10s place (like for moniez)
+		System.out.println(String.format("Savings: %.2f, Checking: %.2f", this.savingsBalance, this.checkingBalance));
+	}
+
+
+
+}
 
 
 
 
 
-// // Application Simulations
-
-// // Add the item1 to order2's item list and increment the order's total.
-// order2.items.add(item1);
-// order2.total += item1.price;
-
-// // order3 ordered a capuccino. Add the cappuccino to their order and to their
-// tab.
-// order3.items.add(item4);
-// order3.total += item4.price;
-
-// // order4 added a latte. Update accordingly.
-// order4.items.add(item2);
-// order4.total += item2.price;
-
-// // Cindhuri’s order is now ready. Update her status.
-// order1.ready = true;
-
-// // Sam ordered more drinks -- 2 lattes. Update their order as well.
-// order4.items.add(item2);
-// order4.items.add(item2);
-// order4.total += item2.price \* 2;
-
-// // Jimmy’s order is now ready. Update his status.
-// order2.ready = true;
 
 
+class TestBankAccount {
+    public static void main(String[] args) {
+		BankAccount ba = new BankAccount();
+        System.out.println("New Acc No. - " + ba.getAccountNumber());
+		ba.depositMoney(100.49, "checking");
+		ba.depositMoney(3.00, "savings");
+		ba.displayAccountBalance();
 
+		System.out.println(BankAccount.totalHoldings);
 
+		ba.withdrawMoney(50, "checking");
+		ba.withdrawMoney(50, "savings");
+		ba.displayAccountBalance();
 
+		System.out.println(BankAccount.totalHoldings);
 
-
-
-
-
+        BankAccount ba2 = new BankAccount();
+        System.out.println("New Acc No. - " + ba2.getAccountNumber());
+		ba2.depositMoney(3, "checking");
+		ba2.depositMoney(99, "savings");
+		ba2.displayAccountBalance();
+        ba2.withdrawMoney(50, "checking");
+	}
+}
 
 
 
