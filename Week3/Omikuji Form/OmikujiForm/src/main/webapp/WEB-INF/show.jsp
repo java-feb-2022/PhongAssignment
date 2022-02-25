@@ -19,6 +19,8 @@
 In <c:out value="${number}"/> years, you will live in <c:out value="${city}"/> with <c:out value="${name}"/> as your roommate, <c:out value="${hobby}"/> for a living. The next time you see a <c:out value="${livingThing}"/>, you will have good luck.  Also, <c:out value="${saySomething}"/>
 </div>
 
+<a href="http://localhost:8080/omikuji">Go Back</a>
+
 
 
 
