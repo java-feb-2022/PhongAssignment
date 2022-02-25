@@ -1,0 +1,21 @@
+@charset "UTF-8";
+*{
+	width: 1200 px; 
+	Height: 800 px;
+	
+	}
+body{
+	background-color: white; 
+	color: black; 
+}
+h1{
+	margin: 40px;
+}
+div {
+  margin: 40px; 
+  height: 400px;
+  width: 15%;
+  background-color: powderblue;
+  font-size: 25px; 
+  font-style: bold; 
+}
