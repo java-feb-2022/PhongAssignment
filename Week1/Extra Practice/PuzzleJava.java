@@ -1,21 +1,22 @@
 
-// // You will need to import the Random library from java.util
-// import java.util.Random;
+import java.util.Random;
+import java.util.ArrayList;
 
-// public class PuzzleJava(){
+public class PuzzleJava {
 
-// public int generator(){
+    // public int generator() {
 
-// // To use methods from the Random library you will need to create an instance
-// of Random
-// Random randMachine = new Random();
+    // int val = randMachine.setSeed(32);
 
-// // From there you can use any of the methods listed in the documentation. For
-// example:
-// //randMachine.setSeed(35679); // <--- you won't need to use this method.
+    // To use methods from the Random library you will need to create an instance
 
-// }
-// }
+    // Random randMachine = new Random();
+
+    // From there you can use any of the methods listed in the documentation. For
+
+    // randMachine.setSeed(35679); // <--- you won't need to use this method.
+    // return random12;
+}
 
 /// solutions
 

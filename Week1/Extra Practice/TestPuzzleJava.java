@@ -1,18 +1,18 @@
-// import java.util.ArrayList;
-// import java.util.Random;
+import java.util.ArrayList;
+import java.util.Random;
 
-// public class TestPuzzleJava {
+public class TestPuzzleJava {
 
-// public static void main(String[] args) {
-// PuzzleJava generator = new PuzzleJava();
-// ArrayList<Integer> randomRolls = generator.getTenRolls();
-// System.out.println(randomRolls);
-
-// // ..
-// // Write your other test cases here.
-// // ..
-// }
-// }
+    public static void main(String[] args) {
+        PuzzleJava generator = new PuzzleJava();
+        // ArrayList<Integer> randomRolls = generator.getTenRolls();
+        // System.out.println(randomRolls);
+        System.out.println("help me");
+        // ..
+        // Write your other test cases here.
+        // ..
+    }
+}
 
 /// solutions///
 

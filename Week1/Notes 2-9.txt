@@ -1,0 +1,27 @@
+Modularization 
+    maintainability 
+    resusability 
+    Scalability 
+
+do this by creating classes/method together 
+
+//data structure - manipulate data 
+-store/pull/make more efficient/ faster
+
+Array
+
+
+
+
+/arraylist
+
+
+ /Hashmap
+ -key value pairs/dictionary 
+
+
+
+//Questions:
+when to use void/int /double ect. 
+
+
