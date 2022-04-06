@@ -1,0 +1,42 @@
+REST API Notes
+
+Week 4- like go to server/unlike goes back to server.
+-Sorting. takes time and there's traffic
+-can't keep everything in session
+-there's always a page refreshing
+
+
+***No more controller/JSP
+manage state? have different front end and back end?
+request --react front end ---call rest controller/route everytime 
+**rest controller - auth/create user -- expose to outside world
+***rest Controller- json format data 
+
+**zoo animal api 
+
+
+week 4: 
+use week4 assignment:
+	apis/arts - return all arts in db
+
+design API: 
+need model/service/repo === do not need controller 
+new controller with rest controller
+@RestController
+public class APIController{
+	
+	@Autowired
+
+	@GetMapping("/apis/arts")
+	public List <Art (model) > arts (method name) {
+		return artService.getAllArts(); 
+		don't need view model, not using JSP
+
+		**to access your data
+	}
+
+
+Postman App - test route 
+thurder client in vs code 
+
+}
