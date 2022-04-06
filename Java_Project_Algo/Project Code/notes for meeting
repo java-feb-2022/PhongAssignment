@@ -1,0 +1,103 @@
+@GetMapping("/newIdea")==>takes user to the newIdea.jsp
+	public String newIdea(@ModelAttribute("newIdea") Idea idea) {
+		if(inSession.getAttribute("loggedInUser")!=null) {
+			return "newIdea.jsp"; 
+		}
+		else {
+			return "redirect:/"; 
+		}
+	}
+	
+		@PostMapping("/ideas/new") ==this is the route (matches the action below (line 23) 
+	public String newIdea(@Valid @ModelAttribute ("newIdea") Idea idea, BindingResult result) {
+		if(result.hasErrors()) {
+			return "newidea.jsp";
+		}
+		else {
+			ideaService.createIdea(idea);
+			return "redirect:/ideas"; 
+		}
+	}
+
+	
+	<form:form method="POST" action="/ideas/new"
+		modelAttribute="newIdea">
+		
+		
+		
+		
+		=================><===========================
+		
+		@GetMapping("/ideas/ideaDetails/{id}")
+	public String ideaDetails(@PathVariable Long id, Model ideaModel, 
+			HttpSession inSession) {
+	if (inSession.getAttribute("loggedInUser") != null) {
+		 
+			Idea userIdea= ideaService.getOneIdea(id);
+			ideaModel.addAttribute("idea",userIdea);
+			return "ideadetails.jsp"; 
+			
+	}
+	else {
+		return "redirect:/"; 
+	}
+	}
+		 
+		<form action="/ideas/${idea.id}/edit">
+		//<a href="/ideas/${idea.id}/edit">Edit></a> 
+
+			<button type="submit" class="btn btn-primary">Edit</button>
+		</form>
+	
+	
+	
+	=========><================
+	 
+	@GetMapping("/ideas/{id}/edit")
+	public String edit(@PathVariable Long id,		 
+			Model model, HttpSession inSession) {
+		if (inSession.getAttribute("loggedInUser") != null)
+		{
+		Idea editIdea=ideaService.getOneIdea(id); 
+		model.addAttribute("editIdea", editIdea); 
+		return "editIdea.jsp"; 
+	}
+	else {
+		return "redirect:/"; 
+	}
+}
+
+	
+	@PutMapping("/update/{id}")
+	public String updateIdea(@Valid  @ModelAttribute ("editIdea") Idea idea,
+			BindingResult result, Model model) {
+		if(result.hasErrors()) {
+			return "editIdea.jsp"; 
+		}else {
+			ideaService.updateIdea(idea);
+			return "redirect:/ideas";
+		}
+	}
+	
+		 
+		
+		
+		
+		
+		=========><==================
+		
+		
+		@GetMapping("/delete/{id}")
+		
+		public String deleteIdea(@PathVariable Long id) {
+			if(inSession.getAttribute("loggedInUser")!=null) {
+				ideaService.deleteIdea(id);
+				return "redirect:/ideas"; 
+			}
+			else {
+				return "redirect:/"; 
+			}
+		}
+
+	
+		
