@@ -1,0 +1,47 @@
+/* @charset "UTF-8";
+  */
+h1 {
+	color: black;
+}
+
+body {
+	margin: 5% 25%;
+	background-color: #eea300;
+	color: black;
+	font-size: large;
+}
+
+.card{
+	text-align: center;
+	padding: 2%;
+	 
+}
+.parent{
+	color:red; 
+}
+.title {
+	text-align: center;
+	padding: 2%;
+}
+
+.month {
+	text-align: center;
+	padding: 2%;
+}
+
+.carousel {
+	margin: auto;
+	width: 40%;
+ 
+}
+
+.linkcolor{
+	color:black; 
+	
+}
+
+
+.welcome{
+	margin: 15px 0 0 0; 
+}
+ 
