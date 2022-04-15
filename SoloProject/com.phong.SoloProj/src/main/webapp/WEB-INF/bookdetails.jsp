@@ -27,55 +27,57 @@
 </head>
 <body>
 
-<div class="d-flex justify-content-between">
-	<div class="welcome">
-	
-	<h3>
-		Welcome,<span> <c:out value="${loggedInUser.name}"/>!!! </span>
-		
-	</h3>
-	
-	</div>
-	<div class="navbar">
-		<nav class="nav nav-pills justify-content-end">
-			<a class="nav-link active" aria-current="page" href="/books">Home</a>
-			<a class="nav-link" href="/newBook">Review A Book</a> <a
-				class="nav-link" href="/logout">Logout</a>
+	<div class="d-flex justify-content-between">
+		<div class="welcome">
 
-		</nav>
-	</div>
+			<h2>
+				Welcome,<span> <c:out value="${loggedInUser.name}" />!!!
+				</span>
+
+			</h2>
+
+		</div>
+		<div class="navbar">
+			<nav class="nav nav-pills justify-content-end">
+				<a class="nav-link active" aria-current="page" href="/books">Home</a>
+				<a class="nav-link" href="/newBook">Review A Book</a> <a
+					class="nav-link" href="/logout">Logout</a>
+
+			</nav>
+		</div>
 	</div>
 
 	<div class="title">
 		<h1>Junior Book Club</h1>
-	</div> 
+	</div>
 
-<h1>Edit Review </h1>
+	<h2>Edit Review</h2>
 
-	
-	
+
+
 	<p></p>
-	<h3>Reviewed By: ${book.user.name}</h3>
+	<h4>Reviewed By: ${book.user.name}</h4>
 	<p></p>
 	<p></p>
-	<h3>Book Title: ${book.booktitle}</h3>
+	<h4>Book Title: ${book.booktitle}</h4>
 	<p></p>
-	<h3>Recommendation: ${book.recommend}</h3>
+	<h4>Recommendation: ${book.recommend}</h4>
 	<p></p>
-	<h3>What's Great About It: ${book.whatsgreat}</h3>
+	<h4>What's Great About It: ${book.whatsgreat}</h4>
 	<p></p>
+ 
+
 
 	<c:if test="${book.user.id==loggedInUser.id}">
 		<a class="btn btn-primary" href="/books/${book.id}/edit">Edit</a>
 	</c:if>
- <p></p>
+	<p></p>
 
-<div class="card" style="width: 100%;">
- <img src="/img/addbook.jpeg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <p class="card-text">Time To Review </p>
-  </div>
-</div>
+
+	<img src="${book.imgurl}" alt="User did not provide book cover" />
+
+
+ 
 
 
 

@@ -23,26 +23,27 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="/css/style.css">
-<title>Add a Book </title>
+<title>Add a Book</title>
 </head>
 <body>
-<div class="d-flex justify-content-between">
-	<div class="welcome">
-	
-	<h3>
-		Welcome,<span> <c:out value="${loggedInUser.name}"/>!!! </span>
-		
-	</h3>
-	
-	</div>
-	<div class="navbar">
-		<nav class="nav nav-pills justify-content-end">
-			<a class="nav-link active" aria-current="page" href="/books">Home</a>
-			<a class="nav-link" href="/newBook">Review A Book</a> <a
-				class="nav-link" href="/logout">Logout</a>
+	<div class="d-flex justify-content-between">
+		<div class="welcome">
 
-		</nav>
-	</div>
+			<h3>
+				Welcome,<span> <c:out value="${loggedInUser.name}" />!!!
+				</span>
+
+			</h3>
+
+		</div>
+		<div class="navbar">
+			<nav class="nav nav-pills justify-content-end">
+				<a class="nav-link active" aria-current="page" href="/books">Home</a>
+				<a class="nav-link" href="/newBook">Review A Book</a> <a
+					class="nav-link" href="/logout">Logout</a>
+
+			</nav>
+		</div>
 	</div>
 
 	<div class="title">
@@ -50,8 +51,8 @@
 	</div>
 
 
-	<h2>Review A Book </h2>
-	<form:form method="POST" action="/books/new" modelAttribute="newBook">
+	<h2>Review A Book</h2>
+	<form:form method="POST" action="/books/new" modelAttribute="newBook" enctype="multipart/form-data">
 
 		<div class="form-group">
 			<form:label path="booktitle">Book Title:</form:label>
@@ -61,8 +62,18 @@
 			<form:label path="Recommend">Do you recommend? Yes/No:</form:label>
 			<form:errors class="text-danger" path="Recommend" />
 			<form:input class="form-control" path="Recommend" />
- 
-			
+
+			<!-- drop down recommendation -->
+			<!-- <div class="form-group">
+				<label for="exampleFormControlSelect1">Recommendation</label> <select
+					class="form-control" id="Recommendation">
+					<option>Yes</option>
+					<option>No</option>
+					
+				</select>
+			</div > -->
+
+
 			<form:label path="whatsgreat">What's Great About It:</form:label>
 			<form:errors class="text-danger" path="whatsgreat" />
 			<form:input class="form-control" path="whatsgreat" />
@@ -72,18 +83,30 @@
 		</div>
 		<form:input type="hidden" value="${loggedInUser.id}" path="user" />
 		<p></p>
+		
+		
+		<p>
+		
+		<form:label path="imgurl">Add Your Favorite Book Cover</form:label>
+		<input type ="file" name="coverimage" id="fileToUpLoad">
+		
+		</p>
+		
+		
 		<button type="submit" class="btn btn-primary">Submit</button>
 
 	</form:form>
-	<p> <a class="btn btn-primary" href="/books">Cancel </a></p>
+	<p>
+		<a class="btn btn-primary" href="/books">Cancel </a>
+	</p>
 
 
-<div class="card" style="width: 100%;">
- <img src="/img/Bookreview.jpeg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <p class="card-text">Time To Review </p>
-  </div>
-</div>
+	<div class="card" style="width: 100%;">
+		<img src="/img/Bookreview.jpeg" class="card-img-top" alt="bookreview">
+		<div class="card-body">
+			<p class="card-text">Time To Review A Book</p>
+		</div>
+	</div>
 
 
 </body>

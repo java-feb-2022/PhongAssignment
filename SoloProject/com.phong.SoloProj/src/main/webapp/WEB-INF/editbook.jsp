@@ -27,67 +27,81 @@
 </head>
 <body>
 
-<div class="d-flex justify-content-between">
-	<div class="welcome">
-	
-	<h3>
-		Welcome,<span> <c:out value="${loggedInUser.name}"/>!!! </span>
-		
-	</h3>
-	
-	</div>
-	<div class="navbar">
-		<nav class="nav nav-pills justify-content-end">
-			<a class="nav-link active" aria-current="page" href="/books">Home</a>
-			<a class="nav-link" href="/newBook">Review A Book</a> <a
-				class="nav-link" href="/logout">Logout</a>
+	<div class="d-flex justify-content-between">
+		<div class="welcome">
 
-		</nav>
-	</div>
+			<h2>
+				Welcome,<span> <c:out value="${loggedInUser.name}" />!!!
+				</span>
+
+			</h2>
+
+		</div>
+		<div class="navbar">
+			<nav class="nav nav-pills justify-content-end">
+				<a class="nav-link active" aria-current="page" href="/books">Home</a>
+				<a class="nav-link" href="/newBook">Review A Book</a> <a
+					class="nav-link" href="/logout">Logout</a>
+
+			</nav>
+		</div>
 	</div>
 
 	<div class="title">
 		<h1>Junior Book Club</h1>
 	</div>
-	
 
 
-	
-	
-	<form:form method="Put" action="/update/${editBook.id}" modelAttribute="editBook">
+
+
+
+	<form:form method="Put" action="/update/${editBook.id}"
+		modelAttribute="editBook" enctype="multipart/form-data">
 
 		<div class="form-group">
-		<form:label path="booktitle">Book Title:</form:label>
+			<form:label path="booktitle">Book Title:</form:label>
 			<form:errors class="text-danger" path="booktitle" />
 			<form:input class="form-control" path="booktitle" />
 
 			<form:label path="Recommend">Do you recommend? Yes/No:</form:label>
 			<form:errors class="text-danger" path="Recommend" />
 			<form:input class="form-control" path="Recommend" />
- 
-			
+
+
 			<form:label path="whatsgreat">What's Great About It:</form:label>
 			<form:errors class="text-danger" path="whatsgreat" />
 			<form:input class="form-control" path="whatsgreat" />
+			<p></p>
 
+
+
+
+
+			<form:label path="imgurl">Replace Book Cover</form:label>
+			<input type="file" name="coverimage" id="fileToUpLoad">
 
 		</div>
 		<form:input type="hidden" value="${loggedInUser.id}" path="user" />
 		<p></p>
 		<button type="submit" class="btn btn-primary">Submit</button>
-		<a  class="btn btn-primary" href="/books">Cancel</a>
+		<a class="btn btn-primary" href="/books">Cancel</a>
 		<p></p>
-		
-	
+
+
 	</form:form>
-	
-	<a  class="btn btn-danger" href="/delete/${editBook.id}">Delete Book</a>
+
+	<p>
+		<a class="btn btn-danger" href="/delete/${editBook.id}">Delete
+			Book</a>
+	</p>
+
+
+	<p></p>
+
 	
 
-	 
-	
- 
-	
+
+
 
 
 </body>

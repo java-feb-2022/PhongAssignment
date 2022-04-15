@@ -37,6 +37,18 @@ public class Book {
 	@JoinColumn(name = "user_id")
 	private User user;
 
+	//upload image
+	private String imgurl;  
+
+	public String getImgurl() {
+		return imgurl;
+	}
+
+
+	public void setImgurl(String imgurl) {
+		this.imgurl = imgurl;
+	}
+
 
 	public Long getId() {
 		return id;

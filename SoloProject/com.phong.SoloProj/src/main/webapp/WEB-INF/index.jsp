@@ -22,18 +22,19 @@
 <title>Register And Login Landing Page</title>
 </head>
 <body>
-<div class = "title">  <h1>Junior Book Club </h1>
-</div>
+	<div class="title">
+		<h1>Junior Book Club</h1>
+	</div>
 
-<div class="card" style="width: 100%;">
-  <img src="/img/landingpage.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <p class="card-text">Read and Share Your Review</p>
-  </div>
-</div>
+	<div class="card" style="width: 100%;">
+		<img src="/img/landingpage.jpg" class="card-img-top" alt="...">
+		<div class="card-body">
+			<p class="card-text">Read and Share Your Review</p>
+		</div>
+	</div>
 
 
-	<div class="row"> 
+	<div class="row">
 
 		<div class="col">
 			<h1>Reader Registration</h1>
@@ -44,26 +45,26 @@
 					<form:label path="name">Name:</form:label>
 					<form:errors class="text-danger" path="name" />
 					<form:input class="form-control" path="name" />
-					
+
 
 				</div>
 				<div class="form-group">
 					<form:label path="email">Email:</form:label>
 					<form:errors class="text-danger" path="email" />
 					<form:input class="form-control" path="email" />
-					
+
 				</div>
 				<div class="form-group">
 					<form:label path="password">Password:</form:label>
 					<form:errors class="text-danger" path="password" />
 					<form:password class="form-control" path="password" />
-					
+
 				</div>
 				<div class="form-group">
 					<form:label path="confirm">Password Confirmation:</form:label>
 					<form:errors class="text-danger" path="confirm" />
 					<form:password class="form-control" path="confirm" />
-					
+
 				</div>
 				<p></p>
 				<button type="submit" class="btn btn-primary">Submit</button>
@@ -83,16 +84,21 @@
 					<form:password class="form-control" path="password" />
 					<form:errors class="text-danger" path="password" />
 				</div>
-				
+
 				<p></p>
 				<button type="submit" class="btn btn-primary">Login</button>
 
 
 			</form:form>
 		</div>
-		</div>
-<div class="parent"> <p> <h4>Make sure to get your parent's permission before using the Internet!!!</h4></p> </div>		
-		
+	</div>
+	<div class="parent">
+		<p>
+		<h4>Make sure to get your parent's permission before using the
+			Internet!!!</h4>
+		</p>
+	</div>
+
 </body>
 
 </html>
